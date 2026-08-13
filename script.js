@@ -10,7 +10,6 @@ function updateCountdown(){
  ['days','hours','minutes','seconds'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.textContent=vals[i];});
 }
 setInterval(updateCountdown,1000);updateCountdown();
-
 document.querySelectorAll('.accordion').forEach(btn=>{
  btn.addEventListener('click',()=>{
   const panel=btn.nextElementSibling;
