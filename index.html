@@ -1,25 +1,153 @@
+# index.html
+
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Hadi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Hadi 💗</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-card">
-      <h1>Happy Birthday, Hadi 💗</h1>
-      <p>A little website made with all my love</p>
+  <div class="hearts"></div>
+
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="opening" class="opening">
+    <div class="envelope">
+      <div class="heart">💗</div>
+      <h2>A Special Letter For You</h2>
+      <p>Tap to open this little surprise</p>
+      <button id="openBtn">Open My Letter</button>
     </div>
-  </section>
+  </div>
+
+  <div id="mainContent" class="hidden">
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Happy Birthday, Hadi 💗</h1>
+        <p>A little website made with all my love</p>
+
+        <div class="countdown">
+          <div><span id="days">0</span><small>Days</small></div>
+          <div><span id="hours">0</span><small>Hours</small></div>
+          <div><span id="minutes">0</span><small>Minutes</small></div>
+          <div><span id="seconds">0</span><small>Seconds</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-container">
+      <h2 class="section-title">Our Story Timeline</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <button class="accordion active">
+            <span>Our First Hello</span>
+            <small>12 August 2025 • 09:00</small>
+          </button>
+          <div class="panel">
+            <p>Momen dimana kita pertama kali ketemu di PKKMB. Dari pertemuan sederhana itu, ternyata dimulai cerita yang sekarang menjadi bagian paling indah dalam hidupku.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <button class="accordion">
+            <span>First Date</span>
+            <small>20 August 2025 • 18:30</small>
+          </button>
+          <div class="panel">
+            <p>Hari pertama kita jalan berdua. Masih canggung, masih malu-malu, tapi sejak hari itu aku tahu kalau aku ingin menghabiskan lebih banyak waktu bersamamu.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <button class="accordion">
+            <span>Everyday Moments</span>
+            <small>September 2025 • Every Day</small>
+          </button>
+          <div class="panel">
+            <p>Setiap hari terasa menyenangkan bersamamu. Hal-hal kecil yang kita lakukan bersama selalu berhasil membuat hariku lebih baik. Selama sama kamu, hari Senin ku terasa seperti hari Minggu.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <button class="accordion">
+            <span>This Special Day</span>
+            <small>13 August 2026 • 00:00</small>
+          </button>
+          <div class="panel">
+
+            <img src="foto1.jpg" alt="Hadi" class="main-photo">
+
+            <div class="letter">
+              <h3>A Letter For You 💌</h3>
+              <p>
+                Selamat ulang tahun, sayangku.
+
+                Hari ini adalah hari yang sangat spesial karena seseorang yang paling berharga dalam hidupku bertambah usia.
+
+                Terima kasih sudah hadir dalam hidupku, sudah menjadi tempat pulang, tempat bercerita, tempat tertawa, dan tempat aku merasa diterima apa adanya.
+
+                Aku tahu kita tidak selalu melewati hari-hari yang mudah. Ada saat kita lelah, ada saat kita berbeda pendapat, ada saat kita saling diam. Tapi di balik semua itu, aku selalu bersyukur karena kita tetap memilih untuk bertahan.
+
+                Kamu adalah rumah yang selalu ingin aku tuju. Senyummu, tawamu, bahkan tingkah lucumu selalu berhasil membuat hariku terasa lebih hangat.
+
+                Di usia yang baru ini, aku berharap semua impianmu satu per satu menjadi nyata. Semoga kamu selalu diberi kesehatan, kebahagiaan, rezeki yang melimpah, dan orang-orang baik di sekelilingmu.
+
+                Jangan pernah meragukan dirimu sendiri, karena bagiku kamu sudah sangat luar biasa.
+
+                Teruslah tumbuh menjadi perempuan hebat yang aku banggakan.
+
+                Aku sayang kamu, hari ini, besok, dan seterusnya.
+
+                Happy Birthday, my favorite person. 💗
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <h2 class="section-title">Our Memories</h2>
+
+      <div class="gallery">
+        <img src="foto1.jpg" alt="foto1">
+        <img src="foto2.jpg" alt="foto2">
+        <img src="foto3.jpg" alt="foto3">
+      </div>
+    </section>
+
+    <section class="ending">
+      <h2>To Our Journey Ahead 🌸</h2>
+      <p>
+        This is not the end, but just the beginning.
+        Let’s continue writing our story, hand in hand, heart to heart.
+      </p>
+      <h3>I love you always. 💗</h3>
+    </section>
+
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+```
