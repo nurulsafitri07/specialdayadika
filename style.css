@@ -504,3 +504,40 @@ body {
   letter-spacing: 1px;
   text-shadow: 0 0 10px rgba(100, 223, 223, 0.35);
 }
+
+   /* ================= TOMBOL MUSIK FLOATING ================= */
+.music-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--card-dark);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  border-color: var(--sky-blue);
+}
+
+/* Animasi berputar saat lagu aktif */
+.music-btn.playing {
+  animation: spinMusic 4s linear infinite;
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 15px rgba(100, 223, 223, 0.35);
+}
+
+@keyframes spinMusic {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
