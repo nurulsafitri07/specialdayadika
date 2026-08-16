@@ -428,19 +428,21 @@ body {
   color: var(--text-muted);
   line-height: 1.4;
 }
-/* ================= GALLERY GRID (POLAROID BESAR & PANJANG) ================= */
+/* ================= GALLERY (1 KOLOM SCROLL KE BAWAH) ================= */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column; /* Menjadikan foto berurutan ke bawah satu per satu */
+  gap: 28px;
+  max-width: 480px;       /* Lebar kartu proporsional di tengah */
+  margin: 0 auto;
 }
 
 .photo-card {
   background: var(--card-dark);
-  padding: 14px 14px 18px 14px; /* Padding bawah lebih tebal khas polaroid */
-  border-radius: 18px;
+  padding: 16px 16px 22px 16px; /* Frame polaroid tebal di bawah */
+  border-radius: 20px;
   border: 1px solid var(--border-glow);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   text-align: center;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
@@ -452,9 +454,8 @@ body {
 
 .img-wrapper {
   width: 100%;
-  aspect-ratio: 3 / 4;   /* Rasio foto portrait memanjang ke bawah */
-  height: 320px;         /* Ukuran foto dibuat panjang & tinggi */
-  border-radius: 12px;
+  height: 400px; /* Foto dibuat tinggi, besar, dan lega */
+  border-radius: 14px;
   overflow: hidden;
   background-color: var(--card-darker);
 }
@@ -468,11 +469,11 @@ body {
 }
 
 .photo-card .caption {
-  font-family: 'Caveat', cursive; /* Tulisan tangan estetik polaroid */
-  font-size: 1.25rem;
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem; /* Ukuran tulisan caption lebih jelas */
   font-weight: 700;
   color: var(--sky-blue);
-  margin-top: 12px;
+  margin-top: 14px;
   letter-spacing: 0.5px;
 }
 
