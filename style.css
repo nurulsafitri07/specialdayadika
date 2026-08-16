@@ -1,12 +1,19 @@
+/* =======================================================
+   PALET WARNA DARK MODE: DEEP NAVY & SKY BLUE GLOW
+======================================================= */
 :root {
-  --primary-blue: #4A90E2;
-  --dark-navy: #1E293B;
-  --slate-sub: #64748B;
-  --bg-page: #F8FAFC;
-  --card-white: #FFFFFF;
-  --border-light: #E2E8F0;
-  --accent-soft: #EFF6FF;
-  --green-badge: #10B981;
+  --bg-deep: #0B132B;          /* Background utama biru sangat gelap */
+  --card-dark: #1C2541;        /* Warna kartu navy pekat */
+  --card-darker: #151D36;      /* Warna bagian dalam panel / dropdown */
+  --border-glow: #3A506B;      /* Border navy abu-abu */
+  
+  --sky-blue: #64DFDF;         /* Aksen utama biru muda / cyan menyala */
+  --sky-blue-hover: #48CAE4;   /* Biru muda saat disentuh */
+  --sky-blue-soft: rgba(100, 223, 223, 0.12); /* Background lembut untuk badge/ikon */
+  
+  --text-main: #F0F6FC;        /* Teks judul terang & tajam */
+  --text-muted: #94A3B8;       /* Teks deskripsi abu-abu lembut */
+  --green-badge: #4EBA6F;      /* Hijau indikator selesai */
 }
 
 * {
@@ -17,8 +24,8 @@
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: var(--bg-page);
-  color: var(--dark-navy);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -27,11 +34,11 @@ body {
   display: none !important;
 }
 
-/* ================= INTRO SCREEN ================= */
+/* ================= INTRO POPUP SCREEN ================= */
 .intro-screen {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at top right, #E0F2FE, #F8FAFC);
+  background: radial-gradient(circle at center, #1C2541 0%, #0B132B 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,58 +47,60 @@ body {
 }
 
 .intro-card {
-  background: var(--card-white);
+  background: var(--card-dark);
   padding: 36px 28px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
   max-width: 440px;
   text-align: center;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-glow);
 }
 
 .intro-badge {
   display: inline-block;
-  background: var(--accent-soft);
-  color: var(--primary-blue);
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
   font-size: 0.78rem;
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 50px;
   margin-bottom: 16px;
+  border: 1px solid rgba(100, 223, 223, 0.25);
 }
 
 .intro-card h1 {
   font-size: 1.6rem;
   margin-bottom: 12px;
-  color: var(--dark-navy);
+  color: var(--text-main);
 }
 
 .intro-card p {
-  color: var(--slate-sub);
+  color: var(--text-muted);
   font-size: 0.92rem;
   margin-bottom: 24px;
   line-height: 1.5;
 }
 
 .start-btn {
-  background: var(--primary-blue);
-  color: white;
+  background: var(--sky-blue);
+  color: #0B132B;
   border: none;
   padding: 12px 28px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(74, 144, 226, 0.35);
-  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 20px rgba(100, 223, 223, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .start-btn:hover {
-  background: #3B82F6;
+  background: var(--sky-blue-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(72, 202, 228, 0.5);
 }
 
-/* ================= MAIN CONTAINER ================= */
+/* ================= SECTION STRUCTURE ================= */
 .section-container {
   max-width: 680px;
   margin: 0 auto 40px auto;
@@ -105,12 +114,12 @@ body {
 
 .section-header h2 {
   font-size: 1.45rem;
-  color: var(--dark-navy);
+  color: var(--text-main);
   margin-bottom: 4px;
 }
 
 .section-header p {
-  color: var(--slate-sub);
+  color: var(--text-muted);
   font-size: 0.88rem;
 }
 
@@ -122,49 +131,63 @@ body {
 }
 
 .hero-card {
-  background: var(--card-white);
-  border: 1px solid var(--border-light);
+  background: var(--card-dark);
+  border: 1px solid var(--border-glow);
   border-radius: 20px;
   padding: 32px 24px;
   text-align: center;
   max-width: 680px;
   width: 100%;
-  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--sky-blue), transparent);
 }
 
 .hero-tag {
   font-size: 0.75rem;
   font-weight: 800;
-  color: var(--primary-blue);
-  background: var(--accent-soft);
+  color: var(--sky-blue);
+  background: var(--sky-blue-soft);
   padding: 4px 12px;
   border-radius: 50px;
   letter-spacing: 0.5px;
+  border: 1px solid rgba(100, 223, 223, 0.2);
 }
 
 .hero-date {
   font-size: 0.82rem;
-  color: var(--slate-sub);
-  margin-top: 8px;
+  color: var(--text-muted);
+  margin-top: 10px;
   font-weight: 600;
 }
 
 .hero-card h1 {
   font-size: 1.85rem;
   margin-top: 8px;
-  color: var(--dark-navy);
+  color: var(--text-main);
 }
 
 .hero-card h2 {
   font-family: 'Caveat', cursive;
-  font-size: 2.2rem;
-  color: var(--primary-blue);
+  font-size: 2.3rem;
+  color: var(--sky-blue);
   font-weight: 700;
   margin-bottom: 6px;
+  text-shadow: 0 0 15px rgba(100, 223, 223, 0.3);
 }
 
 .hero-subtitle {
-  color: var(--slate-sub);
+  color: var(--text-muted);
   font-size: 0.9rem;
   margin-bottom: 24px;
 }
@@ -172,10 +195,10 @@ body {
 .countdown-label {
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--slate-sub);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .countdown {
@@ -185,7 +208,8 @@ body {
 }
 
 .time-box {
-  background: #F1F5F9;
+  background: var(--card-darker);
+  border: 1px solid var(--border-glow);
   padding: 10px 14px;
   border-radius: 12px;
   min-width: 65px;
@@ -194,13 +218,13 @@ body {
 .time-box span {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--sky-blue);
   display: block;
 }
 
 .time-box small {
   font-size: 0.7rem;
-  color: var(--slate-sub);
+  color: var(--text-muted);
 }
 
 /* ================= TIMELINE ACCORDION ================= */
@@ -211,11 +235,11 @@ body {
 }
 
 .timeline-item {
-  background: var(--card-white);
-  border: 1px solid var(--border-light);
+  background: var(--card-dark);
+  border: 1px solid var(--border-glow);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .accordion {
@@ -244,18 +268,18 @@ body {
 .acc-title strong {
   display: block;
   font-size: 0.92rem;
-  color: var(--dark-navy);
+  color: var(--text-main);
 }
 
 .acc-title small {
   font-size: 0.75rem;
-  color: var(--slate-sub);
+  color: var(--text-muted);
 }
 
 .toggle-icon {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--sky-blue);
 }
 
 .panel {
@@ -263,24 +287,24 @@ body {
   overflow: hidden;
   transition: max-height 0.3s ease-out;
   padding: 0 16px;
-  background: #FAFAFA;
+  background: var(--card-darker);
 }
 
 .panel.open {
   max-height: 500px;
   padding: 14px 16px 18px 16px;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid var(--border-glow);
 }
 
 .panel p {
   font-size: 0.88rem;
-  color: var(--slate-sub);
+  color: var(--text-muted);
   line-height: 1.6;
 }
 
 .letter-box {
-  background: var(--card-white);
-  border: 1px dashed #CBD5E1;
+  background: var(--card-dark);
+  border: 1px dashed var(--sky-blue);
   padding: 16px;
   border-radius: 10px;
 }
@@ -288,7 +312,7 @@ body {
 .letter-box h3 {
   font-family: 'Caveat', cursive;
   font-size: 1.5rem;
-  color: var(--primary-blue);
+  color: var(--sky-blue);
   margin-bottom: 6px;
 }
 
@@ -298,7 +322,7 @@ body {
   margin-top: 10px;
   font-family: 'Caveat', cursive;
   font-size: 1.15rem;
-  color: var(--primary-blue);
+  color: var(--sky-blue);
 }
 
 /* ================= TRAITS GRID ================= */
@@ -315,19 +339,19 @@ body {
 }
 
 .trait-card {
-  background: var(--card-white);
-  border: 1px solid var(--border-light);
+  background: var(--card-dark);
+  border: 1px solid var(--border-glow);
   padding: 14px;
   border-radius: 14px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .trait-icon-box {
   font-size: 1.3rem;
-  background: var(--accent-soft);
+  background: var(--sky-blue-soft);
   width: 38px;
   height: 38px;
   border-radius: 10px;
@@ -335,17 +359,18 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border: 1px solid rgba(100, 223, 223, 0.2);
 }
 
 .trait-card h4 {
   font-size: 0.88rem;
-  color: var(--dark-navy);
+  color: var(--text-main);
   margin-bottom: 2px;
 }
 
 .trait-card p {
   font-size: 0.78rem;
-  color: var(--slate-sub);
+  color: var(--text-muted);
   line-height: 1.35;
 }
 
@@ -363,11 +388,11 @@ body {
 }
 
 .bucket-card {
-  background: var(--card-white);
-  border: 1px solid var(--border-light);
+  background: var(--card-dark);
+  border: 1px solid var(--border-glow);
   padding: 16px;
   border-radius: 14px;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .bucket-card.done {
@@ -378,27 +403,29 @@ body {
   font-size: 0.65rem;
   font-weight: 800;
   color: var(--green-badge);
-  background: #ECFDF5;
+  background: rgba(78, 186, 111, 0.15);
   padding: 2px 8px;
   border-radius: 6px;
   display: inline-block;
   margin-bottom: 8px;
+  border: 1px solid rgba(78, 186, 111, 0.3);
 }
 
 .badge-status.pending {
-  color: var(--primary-blue);
-  background: var(--accent-soft);
+  color: var(--sky-blue);
+  background: var(--sky-blue-soft);
+  border: 1px solid rgba(100, 223, 223, 0.25);
 }
 
 .bucket-card h4 {
   font-size: 0.9rem;
   margin-bottom: 4px;
-  color: var(--dark-navy);
+  color: var(--text-main);
 }
 
 .bucket-card p {
   font-size: 0.8rem;
-  color: var(--slate-sub);
+  color: var(--text-muted);
   line-height: 1.4;
 }
 
@@ -410,11 +437,11 @@ body {
 }
 
 .photo-card {
-  background: var(--card-white);
+  background: var(--card-dark);
   padding: 8px;
   border-radius: 14px;
-  border: 1px solid var(--border-light);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   text-align: center;
 }
 
@@ -423,7 +450,7 @@ body {
   height: 165px;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #E2E8F0;
+  background-color: var(--card-darker);
 }
 
 .img-wrapper img {
@@ -436,7 +463,7 @@ body {
 .photo-card .caption {
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--slate-sub);
+  color: var(--sky-blue);
   margin-top: 6px;
 }
 
@@ -448,31 +475,32 @@ body {
 }
 
 .ending-card {
-  background: var(--card-white);
-  border: 1px solid var(--border-light);
+  background: var(--card-dark);
+  border: 1px solid var(--border-glow);
   border-radius: 20px;
   padding: 30px 24px;
   text-align: center;
   max-width: 680px;
   width: 100%;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .ending-card h2 {
   font-size: 1.35rem;
-  color: var(--dark-navy);
+  color: var(--text-main);
   margin-bottom: 10px;
 }
 
 .ending-card p {
   font-size: 0.88rem;
-  color: var(--slate-sub);
+  color: var(--text-muted);
   margin-bottom: 16px;
 }
 
 .ending-sparkle {
   font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--primary-blue);
+  font-weight: 800;
+  color: var(--sky-blue);
   letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(100, 223, 223, 0.35);
 }
