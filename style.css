@@ -429,26 +429,40 @@ body {
   line-height: 1.4;
 }
 
-/* ================= GALLERY GRID ================= */
+/* ================= GALLERY GRID (UKURAN LEBIH BESAR) ================= */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 16px;
+}
+
+/* Jika dibuka di HP kecil, foto otomatis 1 kolom full agar lebih besar dan jelas */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
 }
 
 .photo-card {
   background: var(--card-dark);
-  padding: 8px;
-  border-radius: 14px;
+  padding: 10px;
+  border-radius: 16px;
   border: 1px solid var(--border-glow);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--sky-blue);
 }
 
 .img-wrapper {
   width: 100%;
-  height: 165px;
-  border-radius: 8px;
+  height: 260px; /* Tinggi foto dinaikkan dari 165px ke 260px */
+  border-radius: 12px;
   overflow: hidden;
   background-color: var(--card-darker);
 }
@@ -461,10 +475,11 @@ body {
 }
 
 .photo-card .caption {
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--sky-blue);
-  margin-top: 6px;
+  margin-top: 10px;
+  letter-spacing: 0.3px;
 }
 
 /* ================= ENDING SECTION ================= */
