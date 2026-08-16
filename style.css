@@ -231,7 +231,7 @@ body {
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .timeline-item {
@@ -239,13 +239,18 @@ body {
   border: 1px solid var(--border-glow);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.2s ease;
+}
+
+.timeline-item:hover {
+  border-color: var(--sky-blue);
 }
 
 .accordion {
   width: 100%;
-  padding: 16px;
-  background: none;
+  padding: 16px 20px;
+  background: transparent;
   border: none;
   outline: none;
   display: flex;
@@ -258,70 +263,75 @@ body {
 .acc-title {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 
 .acc-icon {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .acc-title strong {
   display: block;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--text-main);
 }
 
 .acc-title small {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
 .toggle-icon {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--sky-blue);
+  transition: transform 0.2s ease;
 }
 
+/* Bagian Panel Teks Isi */
 .panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  padding: 0 16px;
+  display: none; /* Sembunyikan default */
+  padding: 16px 20px 20px 20px;
   background: var(--card-darker);
-}
-
-.panel.open {
-  max-height: 500px;
-  padding: 14px 16px 18px 16px;
   border-top: 1px solid var(--border-glow);
 }
 
+.panel.open {
+  display: block !important; /* Pastikan selalu muncul saat terbuka */
+  animation: fadeInPanel 0.3s ease;
+}
+
+@keyframes fadeInPanel {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .panel p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .letter-box {
   background: var(--card-dark);
   border: 1px dashed var(--sky-blue);
-  padding: 16px;
-  border-radius: 10px;
+  padding: 18px;
+  border-radius: 12px;
 }
 
 .letter-box h3 {
   font-family: 'Caveat', cursive;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--sky-blue);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .letter-sign {
   display: block;
   text-align: right;
-  margin-top: 10px;
+  margin-top: 12px;
   font-family: 'Caveat', cursive;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--sky-blue);
 }
 
