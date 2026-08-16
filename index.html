@@ -3,208 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Story</title>
+  <title>Happy 20th Birthday, Adika! ✨</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Intro Screen -->
+  <!-- ==================== INTRO SCREEN ==================== -->
   <div id="intro" class="intro-screen">
     <div class="intro-card">
-      <div class="intro-badge">A little surprise for you</div>
+      <div class="intro-badge">✨ A Little Surprise For You</div>
 
-      <h1>Before you continue</h1>
+      <h1>Before You Continue</h1>
 
       <p>
-        I made this little website because there are so many things
-        I want to tell you. Every page holds a memory,
-        and every word comes from my heart.
+        Website kecil ini sengaja dibikin khusus buat ngerayain hari ulang tahunmu yang ke-20. Isinya ada cerita perjalanan, momen seru, dan doa terbaik buat babak barumu.
       </p>
 
       <button id="startBtn" class="start-btn">
-        Open Our Story
+        Open Special Story 🎁
       </button>
     </div>
   </div>
 
-  <!-- Main Website -->
+  <!-- ==================== MAIN WEBSITE (SCROLL) ==================== -->
   <div id="website" class="hidden">
 
-    <!-- Hero -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-card">
+        <span class="hero-tag">🌟 CHAPTER 20</span>
+        <p class="hero-date">17 August 2026</p>
+        <h1>Happy 20th Birthday!</h1>
+        <h2>Adika ✨</h2>
+        <p class="hero-subtitle">Officially entering the roaring twenties with good vibes only.</p>
 
-        <p class="date">17 August 2026</p>
-
-        <h1>Happy Birthday</h1>
-        <h2>My Favorite Person</h2>
-
+        <div class="countdown-label">Countdown / Live Celebration:</div>
         <div class="countdown">
-
           <div class="time-box">
             <span id="days">0</span>
             <small>Days</small>
           </div>
-
           <div class="time-box">
             <span id="hours">0</span>
             <small>Hours</small>
           </div>
-
           <div class="time-box">
             <span id="minutes">0</span>
             <small>Minutes</small>
           </div>
-
           <div class="time-box">
             <span id="seconds">0</span>
             <small>Seconds</small>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="timeline-section">
-
-      <h2>Our Timeline</h2>
+    <!-- SECTION 1: TIMELINE ACCORDION -->
+    <section class="section-container">
+      <div class="section-header">
+        <h2>20 Years Journey ⏳</h2>
+        <p>Melihat kembali caramu bertumbuh sampai sejauh ini.</p>
+      </div>
 
       <div class="timeline">
 
         <!-- Card 1 -->
         <div class="timeline-item">
-
           <button class="accordion active">
-
-            <div>
-              <strong>Our First Hello</strong>
-              <small>12 August 2025 • 09:00</small>
+            <div class="acc-title">
+              <span class="acc-icon">🧩</span>
+              <div>
+                <strong>Setiap Cerita Kecil</strong>
+                <small>The Beginning</small>
+              </div>
             </div>
-
-            <span>+</span>
-
+            <span class="toggle-icon">−</span>
           </button>
-
           <div class="panel open">
             <p>
-              Momen pertama kita bertemu di PKKMB.
-              Dari pertemuan sederhana itu,
-              ternyata dimulai cerita yang sekarang
-              menjadi bagian paling indah dalam hidupku.
+              Semua tawa, cerita random, dan pengalaman masa kecil yang pelan-pelan ngebentuk dirimu jadi pribadi yang seru dan menyenangkan.
             </p>
           </div>
-
         </div>
 
         <!-- Card 2 -->
         <div class="timeline-item">
-
           <button class="accordion">
-
-            <div>
-              <strong>First Date</strong>
-              <small>20 August 2025 • 18:30</small>
+            <div class="acc-title">
+              <span class="acc-icon">💼</span>
+              <div>
+                <strong>Mulai Bertanggung Jawab</strong>
+                <small>Growing & Learning</small>
+              </div>
             </div>
-
-            <span>+</span>
-
+            <span class="toggle-icon">+</span>
           </button>
-
           <div class="panel">
             <p>
-              Hari pertama kita jalan berdua masih terasa jelas di ingatanku.
-              Masih malu-malu, masih canggung,
-              tapi sejak hari itu aku tahu kalau
-              aku ingin mengenal kamu lebih lama.
+              Masa transisi di mana kamu mulai mikirin masa depan, belajar mandiri dari hal-hal yang gak mudah, dan tetap berjuang buat prosesmu sendiri.
             </p>
           </div>
-
         </div>
 
         <!-- Card 3 -->
         <div class="timeline-item">
-
           <button class="accordion">
-
-            <div>
-              <strong>This Special Day</strong>
-              <small>17 August 2026 • 00:00</small>
+            <div class="acc-title">
+              <span class="acc-icon">🤍</span>
+              <div>
+                <strong>Tetap Jadi Orang Baik</strong>
+                <small>Pure Character</small>
+              </div>
             </div>
-
-            <span>+</span>
-
+            <span class="toggle-icon">+</span>
           </button>
-
           <div class="panel">
-
-            <img src="foto1.jpg" class="photo" alt="Foto">
-
-            <div class="letter">
-
-              <h3>A Letter For You</h3>
-
-              <p>
-                Selamat ulang tahun.
-                Semoga semua impianmu satu per satu menjadi nyata.
-                Terima kasih sudah menjadi bagian terindah dalam hidupku.
-                Aku bangga sama kamu, dan aku akan selalu mendoakan
-                setiap langkahmu.
-              </p>
-
-            </div>
-
+            <p>
+              Meskipun dunia kadang rumit dan bikin capek, kamu tetap punya hati yang tulus, sabar, dan selalu bawa vibes positif ke orang-orang sekitar.
+            </p>
           </div>
+        </div>
 
+        <!-- Card 4 -->
+        <div class="timeline-item">
+          <button class="accordion">
+            <div class="acc-title">
+              <span class="acc-icon">💌</span>
+              <div>
+                <strong>A Special Letter For You</strong>
+                <small>Birthday Wishes</small>
+              </div>
+            </div>
+            <span class="toggle-icon">+</span>
+          </button>
+          <div class="panel">
+            <div class="letter-box">
+              <h3>Dear Adika, 🤍</h3>
+              <p>
+                Selamat ulang tahun yang ke-20! Di usia kepala dua ini, aku selalu berdoa supaya setiap langkah yang kamu ambil dimudahkan, rezekimu dilancarkan dari segala arah, dan dijauhkan dari hal-hal yang bikin kamu lelah.
+              </p>
+              <p>
+                Semoga dunia selalu memperlakukan kamu dengan baik, dan semua impian besar yang lagi kamu usahakan bisa terwujud satu per satu. Jangan lupa untuk selalu bangga sama diri kamu sendiri ya!
+              </p>
+              <span class="letter-sign">— Always wishing the best for you ✨</span>
+            </div>
+          </div>
         </div>
 
       </div>
-
     </section>
 
-    <!-- Gallery -->
-    <section class="gallery-section">
-
-      <h2>Our Memories</h2>
-
-      <div class="gallery">
-
-        <img src="foto1.jpg" alt="Memory 1">
-        <img src="foto2.jpg" alt="Memory 2">
-        <img src="foto3.jpg" alt="Memory 3">
-
+    <!-- SECTION 2: RANDOM TRAITS -->
+    <section class="section-container">
+      <div class="section-header">
+        <h2>Random Things About You ✨</h2>
+        <p>Vibes dan kepribadian yang bikin suasana selalu nyaman.</p>
       </div>
 
+      <div class="traits-grid">
+        <div class="trait-card">
+          <div class="trait-icon-box">☕</div>
+          <div>
+            <h4>Chill Guy</h4>
+            <p>Orangnya santai, gak ribet, dan selalu asik dibawa ngobrol kapan aja.</p>
+          </div>
+        </div>
+
+        <div class="trait-card">
+          <div class="trait-icon-box">⚡</div>
+          <div>
+            <h4>Random Humor</h4>
+            <p>Selera jokes receh yang tiba-tiba muncul dan bikin suasana gak garing.</p>
+          </div>
+        </div>
+
+        <div class="trait-card">
+          <div class="trait-icon-box">🎧</div>
+          <div>
+            <h4>Punya Dunianya Sendiri</h4>
+            <p>Fokus dan bersemangat kalau udah asik sama hal-hal yang disuka.</p>
+          </div>
+        </div>
+
+        <div class="trait-card">
+          <div class="trait-icon-box">🌟</div>
+          <div>
+            <h4>Good Energy</h4>
+            <p>Pembawaannya ramah, tenang, dan bikin orang di sekitarnya merasa nyaman.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Ending -->
+    <!-- SECTION 3: BUCKET LIST -->
+    <section class="section-container">
+      <div class="section-header">
+        <h2>The 20s Bucket List 🎯</h2>
+        <p>Target dan rencana seru yang siap diwujudkan!</p>
+      </div>
+
+      <div class="bucket-grid">
+        <div class="bucket-card done">
+          <span class="badge-status">✓ DONE</span>
+          <h4>Welcome Chapter 20</h4>
+          <p>Resmi masuk usia 20 tahun dengan versi diri yang lebih keren!</p>
+        </div>
+
+        <div class="bucket-card">
+          <span class="badge-status pending">○ IN PROGRESS</span>
+          <h4>Skill Level Up</h4>
+          <p>Makin jago dan berkembang di bidang atau hobi yang lagi ditekuni.</p>
+        </div>
+
+        <div class="bucket-card">
+          <span class="badge-status pending">○ IN PROGRESS</span>
+          <h4>Explore New Places</h4>
+          <p>Dapetin pengalaman baru, jalan-jalan seru, dan cerita berkesan.</p>
+        </div>
+
+        <div class="bucket-card">
+          <span class="badge-status pending">○ IN PROGRESS</span>
+          <h4>Healthy & Stress-Free</h4>
+          <p>Badan tetap fit, rezeki lancar, dan pikiran selalu tenang & bahagia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PHOTO GALLERY -->
+    <section class="section-container">
+      <div class="section-header">
+        <h2>Captured Moments 📸</h2>
+        <p>Kumpulan potret seru di usia 20 tahun.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="photo-card">
+          <div class="img-wrapper">
+            <img src="adika3.jpeg" alt="Adika 1">
+          </div>
+          <p class="caption">Smart & Calm 🤓</p>
+        </div>
+
+        <div class="photo-card">
+          <div class="img-wrapper">
+            <img src="adika4.jpeg" alt="Adika 2">
+          </div>
+          <p class="caption">Random Vibe ✌️</p>
+        </div>
+
+        <div class="photo-card">
+          <div class="img-wrapper">
+            <img src="adika7.jpeg" alt="Adika 3">
+          </div>
+          <p class="caption">Chill Time ☕</p>
+        </div>
+
+        <div class="photo-card">
+          <div class="img-wrapper">
+            <img src="adika10.jpeg" alt="Adika 4">
+          </div>
+          <p class="caption">Stay Awesome 🌟</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: ENDING FOOTER -->
     <section class="ending">
-
       <div class="ending-card">
-
-        <h2>To Our Journey Ahead</h2>
-
+        <h2>To Many More Adventures 🥂</h2>
         <p>
-          This is not the end,
-          but just the beginning.
-          Let’s continue writing our story,
-          hand in hand.
+          Usia 20 adalah awal dari banyak cerita hebat yang menanti di depan. Terus melangkah dengan percaya diri dan nikmati setiap prosesnya!
         </p>
-
-        <h3>I love you always.</h3>
-
+        <div class="ending-sparkle">✦ ALWAYS CHEERING FOR YOU 🎉 ✦</div>
       </div>
-
     </section>
 
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
