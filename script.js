@@ -179,7 +179,38 @@ document.addEventListener("DOMContentLoaded", () => {
     if (minutesEl) minutesEl.innerText = minutes;
     if (secondsEl) secondsEl.innerText = seconds;
   }
+// ==========================================
+  // ACCORDION SYSTEM (ANTI MACET / EVENT DELEGATION)
+  // ==========================================
+  const timelineContainer = document.querySelector(".timeline");
 
+  if (timelineContainer) {
+    timelineContainer.addEventListener("click", (e) => {
+      // Menangkap klik meski mengenai ikon atau teks di dalam tombol
+      const btn = e.target.closest(".accordion");
+      if (!btn) return;
+
+      const currentItem = btn.closest(".timeline-item");
+      const currentPanel = currentItem.querySelector(".panel");
+      const currentToggle = btn.querySelector(".toggle-icon");
+      const isOpen = currentPanel.classList.contains("open");
+
+      // Tutup semua panel lain terlebih dahulu
+      const allItems = timelineContainer.querySelectorAll(".timeline-item");
+      allItems.forEach((item) => {
+        const panel = item.querySelector(".panel");
+        const toggle = item.querySelector(".toggle-icon");
+        if (panel) panel.classList.remove("open");
+        if (toggle) toggle.textContent = "+";
+      });
+
+      // Buka panel yang diklik jika sebelumnya tertutup
+      if (!isOpen && currentPanel) {
+        currentPanel.classList.add("open");
+        if (currentToggle) currentToggle.textContent = "−";
+      }
+    });
+  }
   setInterval(updateTimer, 1000);
   updateTimer();
 });
